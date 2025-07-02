@@ -2,6 +2,8 @@
 </style>
 
 <main class="main">
-  <app-timeline></app-timeline>
+  @for (timeline of timelines; track timeline.header) {
+    <app-timeline [timeline]="timeline"></app-timeline>
+  }
 </main>
 <router-outlet />

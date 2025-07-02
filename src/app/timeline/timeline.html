@@ -1,4 +1,7 @@
-<h2 class="timeline-title">Test</h2>
+<h2 class="timeline-title">{{ timeline?.header }}</h2>
 <div class="timeline-container">
-    <app-entry-card></app-entry-card>
+  @for (imgUrl of timeline?.cardImageUrl; track imgUrl) {
+    <app-entry-card [entry]="{ cardImageUrl: [imgUrl] }"></app-entry-card>
+  }
+  <!-- prepare for splidejs -->
 </div>
