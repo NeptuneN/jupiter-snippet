@@ -1,0 +1,15 @@
+:host {
+    --content-main-gap: 1rem;
+    --content-block-padding: 48px;
+}
+
+main.main {
+    background-color: var(--primary-ui-backdrop-color);
+
+    .content-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--content-main-gap);
+        padding: var(--content-block-padding) 0;
+    }
+}

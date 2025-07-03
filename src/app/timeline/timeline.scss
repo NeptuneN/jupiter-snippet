@@ -1,8 +1,18 @@
 :host {
     --timeline-margin-left: 2rem;
+    --timeline-wrapper-gap: 1rem;
 }
 
-.timeline-title {
-    margin-left: var(--timeline-margin-left);
-    font-weight: 300;
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--timeline-wrapper-gap);
+
+    .timeline-title {
+        margin: unset;
+        margin-left: var(--timeline-margin-left);
+        color: var(--primary-text-color);
+        font-weight: 300;
+        font-size: var(--h2-font-size);
+    }
 }

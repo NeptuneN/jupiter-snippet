@@ -1,5 +1,9 @@
 :root {
     --default-font: 'Rubik', sans-serif;
+    --primary-ui-backdrop-color: #1a2a39;
+    --primary-text-color: white;
+    --h2-font-size: 1.8rem;
+
     body {
         margin: 0;
         font-family: var(--default-font);
