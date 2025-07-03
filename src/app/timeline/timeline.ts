@@ -24,14 +24,18 @@ export class TimelineComponent {
     gap: '0.5rem',
     breakpoints: {
       1280: {
+        perPage: 5,
+        perMove: 5,
+      },
+      1024: {
         perPage: 4,
         perMove: 4,
       },
-      1024: {
+      768: {
         perPage: 3,
         perMove: 3,
       },
-      768: {
+      480: {
         perPage: 2,
         perMove: 2,
       }
