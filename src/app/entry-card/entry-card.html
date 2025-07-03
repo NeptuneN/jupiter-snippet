@@ -1,3 +1,5 @@
-<div class="entry-card">
-  <img src="{{ entry.cardImageUrl[0] }}" alt="captionEt">
-</div>
+<a class="entry-card-wrapper-link" href="this would link to the individual page of the show">
+  <div class="entry-card">
+    <img class="entry-card-image" [ngSrc]="entry.cardImageUrl[0]" alt="captionEt" fill="true" />
+  </div>
+</a>

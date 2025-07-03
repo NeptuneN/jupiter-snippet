@@ -27,7 +27,11 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@splidejs/splide/dist/css/splide.min.css"
+            ],
+            "scripts": [
+              "node_modules/@splidejs/splide/dist/js/splide.js"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",

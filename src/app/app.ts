@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TimelineComponent } from './timeline/timeline';
-import { EntryCardComponent } from './entry-card/entry-card';
 import { TimelineDataService } from './timeline/timeline-data';
 import { JupiterApiModel } from './timeline/jupiter-api-model';
 
@@ -14,8 +13,7 @@ interface TimelineData {
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    TimelineComponent,
-    EntryCardComponent
+    TimelineComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -27,6 +25,7 @@ export class App implements OnInit {
   public timelines: TimelineData[] = [];
 
   // moved timeline component data fetch as to not make as many requests as there are timelines
+  // ideally this should all be done in a main page component, i.e "front page" or "home", if this were more than a snippet project
   constructor(private readonly timelineDataService: TimelineDataService) { }
   ngOnInit(): void {
     this.loadTimelineData();

@@ -1,0 +1,26 @@
+.entry-card {
+    position: relative;
+    height: 400px;
+
+    .entry-card-image {
+        border-radius: 4px;
+    }
+}
+
+@media screen and (max-width: 1280) {
+    .entry-card {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .entry-card {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .entry-card {
+        height: 200px;
+    }
+}

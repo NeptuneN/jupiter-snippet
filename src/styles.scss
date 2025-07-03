@@ -1,0 +1,15 @@
+:root {
+    body {
+        margin: 0;
+    }
+}
+
+/* SplideJS styles */
+/* these can't be on the component level due to how Splide generates them */
+/* so we are pretending as if this class is needed for encapsulation */
+
+.splide-timeline {
+    .splide__arrow[disabled] {
+        display: none;
+    }
+}
