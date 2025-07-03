@@ -1,3 +1,8 @@
+:host {
+    --timeline-margin-left: 2rem;
+}
+
 .timeline-title {
-    margin-left: 2rem;
+    margin-left: var(--timeline-margin-left);
+    font-weight: 300;
 }

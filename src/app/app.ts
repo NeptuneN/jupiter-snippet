@@ -7,6 +7,7 @@ import { JupiterApiModel } from './timeline/jupiter-api-model';
 interface TimelineData {
   header: string;
   cardImageUrl: string[];
+  captionEt: string[];
 }
 
 @Component({
@@ -48,14 +49,19 @@ export class App implements OnInit {
   private mapToTimelineData(item: any): TimelineData {
     const cardImageUrl = item.data
       .map((dataItem: any) => dataItem.verticalPhotos?.[0]?.photoUrlBase)
-      .filter((url: string) => { // in case the response is somehow not a URL
+      .filter((url: string) => {
         try {
-          new URL(url);
+          new URL(url); // in case the response is somehow not a URL
           return true;
-        } catch (e) {
+        } catch {
           return false;
         }
-      }); 
-    return { header: item.header, cardImageUrl };
+      });
+
+    const captionEt = item.data
+      .map((dataItem: any) => dataItem.verticalPhotos?.[0]?.captionEt ?? '')
+
+    const header = item.header;
+    return { header, cardImageUrl, captionEt };
   }
 }
