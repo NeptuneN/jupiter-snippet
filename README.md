@@ -2,6 +2,21 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
+## (LISA) Juhised projekti käivitamiseks
+
+Projekt kasutab ühte npm pluginat, `[SplideJS](https://splidejs.com/)`.
+Lahenduse käivitamiseks on vajalik vaid joosta järgmiselt:
+
+```bash
+npm install
+```
+
+```bash
+ng serve --open
+```
+
+Lahendus on ka üleslaetud Vercel'i platvormil lingil `https://jupiter-snippet.vercel.app/`.
+
 ## Development server
 
 To start a local development server, run:
