@@ -39,7 +39,7 @@ export class App implements OnInit {
         .filter(this.isValidTimeline)
         .map(this.mapToTimelineData);
     });
-    console.log(this.timelines); // network log test
+    // console.log(this.timelines); network log test
   }
 
   private isValidTimeline(item: any): boolean {

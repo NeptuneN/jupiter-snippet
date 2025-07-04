@@ -1,6 +1,6 @@
 :host {
     --content-main-gap: 1rem;
-    --content-block-padding: 48px;
+    --content-block-padding: 3rem;
 }
 
 main.main {
@@ -11,5 +11,13 @@ main.main {
         flex-direction: column;
         gap: var(--content-main-gap);
         padding: var(--content-block-padding) 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main.main {
+        .content-main {
+            padding: calc(var(--content-block-padding) - 1.5rem) 0;
+        }
     }
 }

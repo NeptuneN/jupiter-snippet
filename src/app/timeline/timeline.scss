@@ -16,3 +16,11 @@
         font-size: var(--h2-font-size);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .timeline-wrapper {
+        .timeline-title {
+            margin-left: calc(var(--timeline-margin-left) - 0.5rem);
+        }
+    }
+}

@@ -34,6 +34,7 @@ export class TimelineComponent {
       768: {
         perPage: 3,
         perMove: 3,
+        padding: '1.5rem',
       },
       480: {
         perPage: 2,
