@@ -1,12 +1,14 @@
-<div class="timeline-wrapper">
-  <h2 class="timeline-title">{{ timeline?.header }}</h2>
-  <div class="timeline-container">
-    <splide [options]="splideOptions" class="splide-timeline">
-      @for (imgUrl of timeline?.cardImageUrl; track imgUrl; let i = $index) {
-      <splide-slide>
-        <app-entry-card [entry]="{ cardImageUrl: [imgUrl], captionEt: [timeline?.captionEt[i]] }"></app-entry-card>
-      </splide-slide>
-      }
-    </splide>
+@for (timeline of timelines; track timeline.header) {
+  <div class="timeline-wrapper">
+    <h2 class="timeline-title">{{ timeline.header }}</h2>
+    <div class="timeline-container">
+      <splide [options]="splideOptions" class="splide-timeline">
+        @for (imgUrl of timeline.cardImageUrl; track imgUrl; let i = $index) {
+          <splide-slide>
+            <app-entry-card [entry]="{ cardImageUrl: [imgUrl], captionEt: [timeline.captionEt[i]] }"></app-entry-card>
+          </splide-slide>
+        }
+      </splide>
+    </div>
   </div>
-</div>
+}

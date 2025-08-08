@@ -1,8 +1,6 @@
+<app-header></app-header>
 <main class="main">
   <section class="content-main">
-    @for (timeline of timelines; track timeline.header) {
-      <app-timeline [timeline]="timeline"></app-timeline>
-    }
+    <router-outlet></router-outlet>
   </section>
 </main>
-<router-outlet />
