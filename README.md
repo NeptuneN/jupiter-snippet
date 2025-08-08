@@ -4,7 +4,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## (LISA) Juhised projekti käivitamiseks
 
-Projekt kasutab ühte npm pluginat, `[SplideJS](https://splidejs.com/)`.
+Projekt kasutab ühte npm pluginat, [SplideJS](https://splidejs.com/).
 Lahenduse käivitamiseks on vajalik vaid joosta järgmiselt:
 
 ```bash
@@ -15,7 +15,7 @@ npm install
 ng serve --open
 ```
 
-Lahendus on ka üleslaetud Vercel'i platvormil lingil `https://jupiter-snippet.vercel.app/`.
+Lahendus on ka üleslaetud Vercel'i platvormil lingil https://jupiter-snippet.vercel.app/.
 
 ## Development server
 
