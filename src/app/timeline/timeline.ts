@@ -63,7 +63,7 @@ export class TimelineComponent implements OnInit {
       this.timelines = frontPageItems
         .filter(this.isValidTimeline)
         .map(this.mapToTimelineData);
-      // console.log(this.timelines);
+      console.log(this.timelines);
     });
   }
 
