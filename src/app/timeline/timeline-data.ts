@@ -7,11 +7,11 @@ import { JupiterApiModel } from './jupiter-api-model';
   providedIn: 'root'
 })
 export class TimelineDataService {
-  private apiUrl = 'https://services.err.ee/api/v2/category/getByUrl?url=video&domain=jupiter.err.ee';
+  private url = 'https://services.err.ee/api/v2/category/getByUrl?url=video&domain=jupiter.err.ee';
 
   constructor(private http: HttpClient) { }
 
   getTimelineData(): Observable<JupiterApiModel> {
-    return this.http.get<JupiterApiModel>(this.apiUrl);
+    return this.http.get<JupiterApiModel>(this.url);
   }
 }

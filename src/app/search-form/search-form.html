@@ -1,0 +1,37 @@
+<div class="search-form">
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Mida sa otsid?" (keyup.enter)="onSearch()" />
+    <button (click)="onSearch()" class="search-btn">
+      <span class="material-icons">search</span>
+    </button>
+  </div>
+  <div class="search-filters">
+    <div class="search-filter-group__type">
+      <label>Tüüp:</label>
+      <select [(ngModel)]="selectedType">
+        <option value="all">Kõik</option>
+        <option value="photo">Pildid</option>
+        <option value="video">Videod</option>
+        <option value="audio">Audio</option>
+      </select>
+    </div>
+    <div class="search-filter-group__sort">
+      <label>Sorteerimine:</label>
+      <select [(ngModel)]="selectedSort">
+        <option value="accuracy">Täpsus</option>
+        <option value="new">Uuemad enne</option>
+        <option value="old">Vanemad enne</option>
+        <option value="abc">Tähestikuline</option>
+      </select>
+    </div>
+    <div class="search-filter-group__range">
+      <label>Ajavahemik:</label>
+      <select [(ngModel)]="selectedTimeRange">
+        <option value="all">Kõik ajad</option>
+        <option value="week">Viimane nädal</option>
+        <option value="month">Viimane kuu</option>
+        <option value="year">Viimane aasta</option>
+      </select>
+    </div>
+  </div>
+</div>
