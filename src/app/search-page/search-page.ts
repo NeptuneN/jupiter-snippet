@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchFormComponent } from '../search-form/search-form';
+import { SearchCardComponent } from '../search-card/search-card';
 import { CommonModule } from '@angular/common';
 import { MediaType } from 'express';
 
@@ -25,7 +26,7 @@ interface MediaTypeDataModel {
 
 @Component({
   selector: 'app-search-page',
-  imports: [SearchFormComponent, CommonModule],
+  imports: [SearchFormComponent, SearchCardComponent, CommonModule],
   templateUrl: './search-page.html',
   styleUrl: './search-page.scss'
 })
@@ -57,28 +58,7 @@ export class SearchPageComponent {
     }));
   }
 
-  // ERR needs images to pass through the cropper service, according to the task at least?
-  cropperServiceImageUrl(photoUrl: string, height: number = 300, width?: number): string {
-    if (!photoUrl) {
-      return ''; // since the UI will use a photo always, if there isn't one, halt here
-    }
-
-    const encodeToUrl = encodeURIComponent(photoUrl); // deal with special characters in file names
-
-    let cropperUrl = `https://arhiiv-img.err.ee/resize?type=optimize&file=${encodeToUrl}`;
-
-    if (height) {
-      cropperUrl += `&height=${height}`;
-    }
-
-    if (width) {
-      cropperUrl += `&width=${width}`;
-    }
-
-    return cropperUrl;
+  hasValidImage(photoUrl: string): boolean {
+    return !!photoUrl?.trim(); // since the UI will use a photo always, if there isn't one (or its invalid), halt in search-page.html
   }
-  
-  // hasValidImage(photoUrl: string) {
-  //   return photoUrl && photoUrl.trim() !== '';
-  // }
 }

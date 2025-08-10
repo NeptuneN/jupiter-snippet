@@ -1,0 +1,7 @@
+@if (cropperServiceImageUrl(entry.photoUrl)) {
+  <a class="search-card-wrapper-link" routerLink="this_would_link_to_the_individual_page_of_the_card">
+    <div class="search-card">
+      <img class="search-card-image" [ngSrc]="cropperServiceImageUrl(entry.photoUrl, 300, 200)" [alt]="entry.heading" fill/>
+    </div>
+  </a>
+}

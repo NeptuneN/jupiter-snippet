@@ -1,0 +1,9 @@
+.search-page-wrapper {
+    .results-section {
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+    }
+}

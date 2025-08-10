@@ -1,4 +1,4 @@
-<div class="search-form-wrapper">
+<div class="search-page-wrapper">
   <app-search-form (searchResults)="onSearchResultsReceived($event)"></app-search-form>
   @if (searchData) {
     <div class="results-section">
@@ -10,8 +10,10 @@
           <h3 class="media-type-header">{{ mediaType.label }}</h3>
         </div>
         <div class="results-grid">
-          @for (item of mediaType.data; track $index) {
-            <!-- consider either creating a new component to use as a template -->
+          @for (entry of mediaType.data; track $index) {
+            @if (hasValidImage(entry.photoUrl)) {
+              <app-search-card [entry]="entry"></app-search-card>
+            }
           }
         </div>
       }
