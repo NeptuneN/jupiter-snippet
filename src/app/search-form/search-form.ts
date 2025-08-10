@@ -37,15 +37,15 @@ export class SearchFormComponent {
     if (!this.searchQuery.trim()) return;
 
     const url = '/api/v1/search';
-    // const url = 'https://arhiiv.err.ee/api/v1/search'; have to use proxy url above
+    // const url = 'https://arhiiv.err.ee/api/v1/search'; have to use proxy url above because CORS when testing locally
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     const queryParams: QueryParamsModel = {
       phrase: this.searchQuery,
       type: this.selectedType,
       sortOption: this.selectedSort,
-      page: 1,
-      limit: 8,
+      page: 1, 
+      limit: 12,
       timeRange: this.selectedTimeRange,
       timeRangeFrom: null,
       timeRangeTo: null,
