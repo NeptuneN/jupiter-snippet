@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://arhiiv.err.ee",
+    "secure": true,
+    "changeOrigin": true
+  }
+}
