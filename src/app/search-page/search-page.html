@@ -2,7 +2,7 @@
   <app-search-form (searchResults)="onSearchResultsReceived($event)"></app-search-form>
   @if (hasSearched && !hasAnyResults()) {
     <div class="no-results">
-      <h4 class="no-results-message">Tulemused puuduvad.</h4>
+      <h2 class="no-results-message">Tulemused puuduvad. Proovige otsida midagi muud?</h2>
     </div>
   } @else {
     <div class="results-section">
@@ -10,16 +10,18 @@
       <!-- debug -->
       <!-- <pre>{{ searchData | json }}</pre> -->
       @for (mediaType of processedResults; track mediaType.label) {
-        <div class="media-type">
-          <h3 class="media-type-header">{{ mediaType.label }}</h3>
-        </div>
-        <div class="results-grid">
-          @for (entry of mediaType.data; track $index) {
-            <!-- if there is no image, skip entirely -->
-            @if (hasValidImage(entry.photoUrl)) {
-              <app-search-card [entry]="entry"></app-search-card>
+        <div class="results-wrapper">
+          <div class="media-type">
+            <h2 class="media-type-header">{{ mediaType.label }}</h2>
+          </div>
+          <div class="results-grid">
+            @for (entry of mediaType.data; track $index) {
+              <!-- if there is no image, skip entirely -->
+              @if (hasValidImage(entry.photoUrl)) {
+                <app-search-card [entry]="entry"></app-search-card>
+              }
             }
-          }
+          </div>
         </div>
       }
     </div>

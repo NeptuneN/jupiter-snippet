@@ -15,7 +15,7 @@
     .timeline-title {
         margin: unset;
         margin-left: var(--timeline-margin-left);
-        font-weight: 300;
+        font-weight: var(--primary-font-weight);
         font-size: var(--h2-font-size);
     }
 }
@@ -24,6 +24,14 @@
     .timeline-wrapper {
         .timeline-title {
             margin-left: calc(var(--timeline-margin-left) - 0.5rem);
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timeline-wrapper {
+        .timeline-title {
+            margin-left: calc(var(--timeline-margin-left) - 1rem);
         }
     }
 }

@@ -25,7 +25,23 @@
 
     .search-card-heading {
         color: var(--primary-text-color);
-        font-weight: 300;
+        font-weight: var(--primary-font-weight);
         margin: unset;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .search-card {
+        .search-card-heading {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-card {
+        .search-card-heading {
+            font-size: 0.8rem;
+        }
     }
 }

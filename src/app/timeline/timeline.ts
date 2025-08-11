@@ -49,6 +49,7 @@ export class TimelineComponent implements OnInit {
       480: {
         perPage: 2,
         perMove: 2,
+        padding: '1rem',
       }
     }
   };

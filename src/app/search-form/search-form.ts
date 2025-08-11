@@ -34,8 +34,10 @@ export class SearchFormComponent {
   constructor(private http: HttpClient) { }
 
   onSearch() {
-    if (!this.searchQuery.trim()) return;
-
+    if (!this.searchQuery.trim()) {
+      alert('Otsing ei saa olla tühi!'); // simple UX feedback
+      return;
+    }
     const url = '/api/v1/search';
     // const url = 'https://arhiiv.err.ee/api/v1/search'; have to use proxy url above because CORS when testing locally
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -45,7 +47,7 @@ export class SearchFormComponent {
       type: this.selectedType,
       sortOption: this.selectedSort,
       page: 1,
-      limit: 12,
+      limit: 20,
       timeRange: this.selectedTimeRange,
       timeRangeFrom: null,
       timeRangeTo: null,

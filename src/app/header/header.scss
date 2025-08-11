@@ -1,12 +1,17 @@
+:host {
+    --header-padding-left: 2rem;
+    --menu-gap: 2rem;
+}
+
 .header {
+    height: 64px;
     display: flex;
     align-items: center;
-    padding: 2rem;
-    // background-color: var(--primary-ui-backdrop-color);
+    padding-left: var(--header-padding-left);
 
     .main-menu {
         display: flex;
-        gap: 32px;
+        gap: var(--menu-gap);
         list-style: none;
         margin: 0;
         padding: 0;
@@ -24,5 +29,21 @@
                 color: var(--primary-text-color);
             }
         }
+    }
+
+    .main-menu-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding-left: calc(var(--header-padding-left) - 0.5rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding-left: calc(var(--header-padding-left) - 1rem);
     }
 }
