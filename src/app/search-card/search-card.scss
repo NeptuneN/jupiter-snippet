@@ -1,6 +1,31 @@
+.search-card-wrapper-link {
+    text-decoration: none;
+}
+
 .search-card {
-    position: relative;
     // height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     aspect-ratio: 3 / 2;
     transition: 0.25s ease-in-out;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    .search-card-image-wrapper {
+        position: relative;
+        height: 100%;
+
+        .search-card-image {
+            border-radius: 4px;
+        }
+    }
+
+    .search-card-heading {
+        color: var(--primary-text-color);
+        font-weight: 300;
+        margin: unset;
+    }
 }

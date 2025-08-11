@@ -1,7 +1,7 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-export interface SearchResultEntry {
+interface SearchResultEntry {
   archiveType: string;
   heading: string;
   photoUrl: string;
@@ -17,11 +17,11 @@ export interface SearchResultEntry {
 export class SearchCardComponent {
   @Input() entry!: SearchResultEntry;
 
-  // ERR needs images to pass through the cropper service, according to the task at least?
-  cropperServiceImageUrl(photoUrl: string, width?: number, height: number = 300): string {
+  // ERR needs images to pass through the cropper service, according to the task at least
+  cropperServiceImageUrl(photoUrl: string, width?: number, height?: number): string {
     const encodeToUrl = encodeURIComponent(photoUrl); // deal with special characters in file names
 
-    let cropperUrl = `https://arhiiv-img.err.ee/resize?type=optimize`;
+    let cropperUrl = `https://arhiiv-img.err.ee/resize?type=optimize&aspect-ratio=3:2`;
 
     if (width) {
       cropperUrl += `&width=${width}`;

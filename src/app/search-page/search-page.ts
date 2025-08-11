@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { SearchFormComponent } from '../search-form/search-form';
 import { SearchCardComponent } from '../search-card/search-card';
 import { CommonModule } from '@angular/common';
-import { MediaType } from 'express';
 
 // ideally these interfaces should be models and the receiver function should be a service
 // but im a little low on time as this is due Aug 12
@@ -33,10 +32,12 @@ interface MediaTypeDataModel {
 export class SearchPageComponent {
   searchData: any = null;
   processedResults: MediaTypeDataModel[] = [];
+  hasSearched = false; // flag for no results
 
   onSearchResultsReceived(results: any) { // gets data from the search form
     this.searchData = results;
     this.processedResults = this.processSearchResults(results);
+    this.hasSearched = true;
     console.log('Processed search results:', this.processedResults);
   }
 
@@ -57,8 +58,13 @@ export class SearchPageComponent {
       label: mediaType.label,
     }));
   }
+  
 
   hasValidImage(photoUrl: string): boolean {
     return !!photoUrl?.trim(); // since the UI will use a photo always, if there isn't one (or its invalid), halt in search-page.html
+  }
+
+  hasAnyResults(): boolean {
+    return this.processedResults.some(mediaType => mediaType.data.length > 0);
   }
 }

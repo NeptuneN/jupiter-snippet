@@ -12,9 +12,10 @@ interface TimelineData {
 
 @Component({
   selector: 'app-timeline',
+  // host: {ngSkipHydration: 'true'},
   imports: [
+    NgxSplideModule,
     EntryCardComponent,
-    NgxSplideModule
   ],
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss'

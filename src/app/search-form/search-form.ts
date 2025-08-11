@@ -12,7 +12,7 @@ interface QueryParamsModel {
   timeRange: 'all' | 'week' | 'month' | 'year' | 'custom';
   timeRangeFrom: number | null;
   timeRangeTo: number | null;
-  includeTranscription: boolean;
+  includeTranscription: boolean; // this does nothing? the CURL response body doesn't change regardless of this value
   advancedParams: any[]; // what is this even for?
 }
 
@@ -24,12 +24,12 @@ interface QueryParamsModel {
 })
 export class SearchFormComponent {
   @Output() searchResults = new EventEmitter<any>(); // pass from child (the form) to parent (the page)
-  
+
   searchQuery = '';
   selectedType: 'all' | 'photo' | 'video' | 'audio' = 'photo';
-  selectedSort: 'accuracy' | 'old' | 'new' | 'abc' = 'accuracy'; 
-  selectedTimeRange: 'all' | 'week' | 'month' | 'year' | 'custom' = 'all'; 
-  includeTranscriptions = false;
+  selectedSort: 'accuracy' | 'old' | 'new' | 'abc' = 'accuracy';
+  selectedTimeRange: 'all' | 'week' | 'month' | 'year' | 'custom' = 'all';
+  includeTranscription = false;
 
   constructor(private http: HttpClient) { }
 
@@ -44,12 +44,12 @@ export class SearchFormComponent {
       phrase: this.searchQuery,
       type: this.selectedType,
       sortOption: this.selectedSort,
-      page: 1, 
+      page: 1,
       limit: 12,
       timeRange: this.selectedTimeRange,
       timeRangeFrom: null,
       timeRangeTo: null,
-      includeTranscription: this.includeTranscriptions,
+      includeTranscription: this.includeTranscription,
       advancedParams: []
     };
 
@@ -59,7 +59,10 @@ export class SearchFormComponent {
           console.log('Search result:', response);
           this.searchResults.emit(response);
         },
-        error: (err) => console.error('Search error:', err)
+        error: (err) => {
+          alert('API error: ' + (err.message || 'Unknown error')); // added because i get 429 errors too often
+          console.error('API error:', err);
+        }
       });
   }
 }

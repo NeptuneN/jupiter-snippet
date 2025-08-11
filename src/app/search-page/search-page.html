@@ -1,6 +1,10 @@
 <div class="search-page-wrapper">
   <app-search-form (searchResults)="onSearchResultsReceived($event)"></app-search-form>
-  @if (searchData) {
+  @if (hasSearched && !hasAnyResults()) {
+    <div class="no-results">
+      <h4 class="no-results-message">Tulemused puuduvad.</h4>
+    </div>
+  } @else {
     <div class="results-section">
       <!-- <h2>Search Results:</h2> -->
       <!-- debug -->
@@ -11,6 +15,7 @@
         </div>
         <div class="results-grid">
           @for (entry of mediaType.data; track $index) {
+            <!-- if there is no image, skip entirely -->
             @if (hasValidImage(entry.photoUrl)) {
               <app-search-card [entry]="entry"></app-search-card>
             }

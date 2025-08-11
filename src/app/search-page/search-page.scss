@@ -1,9 +1,15 @@
+:host {
+    --results-gap: 1rem;
+
+    padding: 0 2rem;
+}
+
 .search-page-wrapper {
     .results-section {
         .results-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 1rem;
+            gap: var(--results-gap);
         }
     }
 }
