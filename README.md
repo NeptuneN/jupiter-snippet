@@ -15,7 +15,19 @@ npm install
 ng serve --open
 ```
 
-Lahendus on ka üleslaetud Vercel'i platvormil lingil https://jupiter-snippet.vercel.app/.
+~~Lahendus on ka üleslaetud Vercel'i platvormil lingil https://jupiter-snippet.vercel.app/.~~
+
+Vercel'i platvormil olev link **ei tööta** hetkeseisuga. Lugeda "Märkmed" lisa.
+
+## (LISA) Märkmed
+
+Proovitöö #2 tehtes esinesid mõned tõrked ERR'i arhiivi Search API'ga, nimelt selle CORS policy oli natuke puudulik. ```Access-Control-Allow-Origin``` header ei olnud sätestatud, mis ei lasknud mul otsemaid proovitöö ülesande endaga peale hakata. 
+
+<img width="1404" height="178" alt="image" src="https://github.com/user-attachments/assets/ef2bdec0-3d21-41ba-b796-1d5b92e61d17" />
+
+Et töötada ERR'i Search API'ga, lisasin kiire development proxy oma lahendusele. Kuna proovitöö ei seisne CORS'i ümber, siis otsustasin minna edasi selle lahendusega kuna aega nappis - Vercel'i platvormil olev /search leht seetõttu ei tööta. **Lahendust peab üles sättima localhost'is** - seda seletab "Juhised projekti käivitamiseks" lisa.
+
+Kui Search API viskab testijale ```429 Too Many Requests``` error'i, peab testija ootama ~15 minutit. ERR'i Search API ei ole sätestanud 'reply-after' header'it, kuid see tundus olevat umbes kui kaua pidin ise ootama.
 
 ## Development server
 
