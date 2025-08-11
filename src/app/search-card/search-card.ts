@@ -6,6 +6,7 @@ interface SearchResultEntry {
   heading: string;
   photoUrl: string;
   type: string;
+  url: string;
 }
 
 @Component({

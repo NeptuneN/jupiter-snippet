@@ -12,7 +12,7 @@ interface SearchResultModel {
   heading: string;
   photoUrl: string;
   type: string;
-  // url: string;
+  url: string;
   // seriesLabel: string;
 }
 
@@ -47,13 +47,13 @@ export class SearchPageComponent {
     }
 
     return apiResponse.activeList.data.map((mediaType: any) => ({
-      data: mediaType.data.map((item: any) => ({
-        archiveType: item.archiveType,
-        heading: item.heading,
-        photoUrl: item.photoUrl,
-        type: item.type,
-        // url: item.url,
-        // seriesLabel: item.seriesLabel
+      data: mediaType.data.map((entry: any) => ({
+        archiveType: entry.archiveType,
+        heading: entry.heading,
+        photoUrl: entry.photoUrl,
+        type: entry.type,
+        url: entry.url,
+        // seriesLabel: entry.seriesLabel
       })),
       label: mediaType.label,
     }));

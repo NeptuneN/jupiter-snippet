@@ -1,4 +1,5 @@
-<a class="search-card-wrapper-link" href="this_would_link_to_the_individual_page_of_the_card">
+<a class="search-card-wrapper-link" href="{{ entry.url }}">
+  <!-- this doesn't actually take you anywhere, but if it did, it would use routerLink instead of href -->
   <div class="search-card">
     <div class="search-card-image-wrapper">
       <img class="search-card-image" [ngSrc]="cropperServiceImageUrl(entry.photoUrl, 400)" [alt]="entry.heading" fill />
